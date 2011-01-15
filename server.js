@@ -6,8 +6,9 @@ var template = require('./template');
 var MAX_FILE_SIZE = 100 * 1024 * 1024;
 
 function app(app) {
+    var HTML_HEADERS = { 'Content-Type': 'text/html; charset=UTF-8' };
     app.get('/', function(req, res) {
-	res.writeHead(200, { 'Content-Type': 'text/html' });
+	res.writeHead(200, HTML_HEADERS);
 	res.write(template.htmlHead);
 	res.write(template.uploadForm);
 	res.write(template.downloadList(files.getFiles()));
@@ -57,13 +58,13 @@ function app(app) {
 	req.on('end', function() {
 	    if (error) {
 		console.error(error.stack);
-		res.writeHead(400, { 'Content-Type': 'text/html' });
+		res.writeHead(400, HTML_HEADERS);
 		res.write(template.htmlHead);
 		res.write(template.error(error || new Error('No file received')));
 		res.write(template.htmlFoot);
 		res.end();
 	    } else {
-		res.writeHead(200, { 'Content-Type': 'text/html' });
+		res.writeHead(200, HTML_HEADERS);
 		res.write(template.htmlHead);
 		res.write(template.thanks);
 		res.write(template.htmlFoot);
