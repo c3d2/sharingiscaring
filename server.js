@@ -27,7 +27,7 @@ function app(app) {
 				      filename: part.filename,
 				      mime: part.mime
 				    } });
-		var out = files.addFile({ name: part.filename,
+		out = files.addFile({ name: part.filename,
 					  type: part.mime
 					});
 		var received = 0;
@@ -56,7 +56,11 @@ function app(app) {
         form.parse(req, function(err, fields, files) { if (!error) error = err; });
 
 	req.on('end', function() {
+	    if (!out && !error)
+		error = new Error('No file received');
+
 	    if (error) {
+		/* Error */
 		console.error(error.stack);
 		res.writeHead(400, HTML_HEADERS);
 		res.write(template.htmlHead);
@@ -64,6 +68,7 @@ function app(app) {
 		res.write(template.htmlFoot);
 		res.end();
 	    } else {
+		/* Success */
 		res.writeHead(200, HTML_HEADERS);
 		res.write(template.htmlHead);
 		res.write(template.thanks);
