@@ -27,7 +27,6 @@ function app(app) {
 				      mime: part.mime
 				    } });
 		var out = files.addFile({ name: part.filename,
-					  size: 0 /*TODO*/,
 					  type: part.mime
 					});
 		var received = 0;

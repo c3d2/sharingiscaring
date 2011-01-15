@@ -12,6 +12,7 @@ try {
     console.error(e.message);
     files = [];
 }
+
 exports.getFiles = function() {
     return files;
 };
@@ -24,6 +25,12 @@ exports.getFile = function(id) {
     });
     return r;
 };
+
+function writeInfo() {
+    /* TODO: delay */
+    fs.writeFile(DB_PATH, JSON.stringify(files));
+}
+
 
 var maxId = 0, totalSize = 0;
 files.forEach(function(file) {
@@ -65,10 +72,11 @@ exports.addFile = function(info) {
 
 	info.size = size;
 	files.unshift(info);
-	fs.writeFile(DB_PATH, JSON.stringify(files));
+	writeInfo();
     };
     out.discard = function() {
 	this.end();
+
 	console.log('rm incomplete ' + path);
 	fs.unlink(path);
     };
@@ -77,8 +85,10 @@ exports.addFile = function(info) {
 
 exports.readFile = function(id) {
     var info = exports.getFile(id);
-    if (info)
+    if (info) {
 	info.downloads++;
+	writeInfo();
+    }
 
     return fs.createReadStream(FILES_PATH + '/' + id);
 };
