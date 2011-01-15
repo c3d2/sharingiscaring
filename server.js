@@ -19,7 +19,7 @@ function app(app) {
 	var out, error;
 
         var form = new formidable.IncomingForm();
-        form.encoding = 'binary';
+        form.encoding = 'utf8';
 	form.handlePart = function(part) {
 	    if (part.name === 'file' && part.filename) {
 		console.log({ part: { name: part.name,
