@@ -40,6 +40,7 @@ module.exports = {
     <meta http-equiv='Content-Type' content='text/html; charset=UTF-8'>\
     <title>Sharing is Caring</title>\
     <link rel='stylesheet' type='text/css' href='style.css'>\
+    <link rel='shortcut icon' href='/favicon.png'>\
   </head>\
   <body>\
     <div id='page'>\
@@ -54,7 +55,7 @@ module.exports = {
 </html>",
 
     uploadForm: "<div id='up'>\
-	<form action='/upload' method='post' enctype='multipart/form-data'>\
+	<form action='/upload' method='post' enctype='multipart/form-data; charset=UTF-8'>\
 	  <input id='file' name='file' type='file'>\
 	  <input type='submit' value='Hochladen'>\
 	</form>\
