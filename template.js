@@ -44,12 +44,10 @@ module.exports = {
   <body>\
     <div id='page'>\
       <h1>\
-	<span style='color: red'>Sharing</span>\
-	<span style='color: blue'>is</span>\
-	<span style='color: green'>Caring</span>\
+	Sharing is Caring\
       </h1>",
     htmlFoot: "<p class='foot'>\
-	Eine Dienst in der Testphase.\
+	Ein Dienst in der Testphase.\
       </p>\
     </div>\
   </body>\

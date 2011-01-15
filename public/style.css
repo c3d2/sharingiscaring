@@ -7,22 +7,27 @@ body {
 }
 h1 {
     font-family: fantasy;
+    font-style: italic;
     text-align: center;
     font-variant: small-caps;
     padding: 0.25em 1em;
     margin: 0;
+    color: #666;
 }
 #page {
     margin: 0 auto;
     padding: 0em 0.5em;
     max-width: 25em;
     background-color: white;
+    border-radius: 0.5em;
+    -moz-border-radius: 0.5em;
 }
 
 #up {
     background-color: #cfa;
-    padding: 0.5em 1em;
+    padding: 0.5em;
     border-radius: 0.5em;
+    margin: 0.5em;
     margin-bottom: 2em;
 }
 p.hint {
@@ -52,7 +57,7 @@ a {
 }
 
 .foot {
-    margin: 0 auto;
+    margin: 3em auto 0;
     text-align: center;
     color: #aaa;
     font-size: 75%;
