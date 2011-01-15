@@ -97,4 +97,4 @@ connect.createServer(
     fileDownload,
     connect.staticProvider(__dirname + '/public'),
     connect.errorHandler({ dumpExceptions: true, showStack: true })
-).listen(parseInt(process.env.PORT || "8000", 10));
+).listen(parseInt(process.env.PORT || "8000", 10), '::');
