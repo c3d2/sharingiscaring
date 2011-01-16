@@ -68,7 +68,8 @@ module.exports = {
     downloadList: function(files) {
 	return "<ul id='down'>" +
 	    files.map(function(file) {
-		return "<li><a href='/file/" + file.id + "/" + escape(encodeURIComponent(file.name)) + "'>" + escape(file.name) + "</a> <span class='size'>" + humanSize(file.size) + "B</span><span class='stats'><b>" + file.downloads + "×</b> seit " + formatDate(file.date) + "</span></li>";
+		var cssClass = file.type.split('/')[0];
+		return "<li><a href='/file/" + file.id + "/" + escape(encodeURIComponent(file.name)) + "' type='" + escape(file.type) + "' class='" + escape(cssClass) + "'>" + escape(file.name) + "</a> <span class='size'>" + humanSize(file.size) + "B</span><span class='stats'><b>" + file.downloads + "×</b> seit " + formatDate(file.date) + "</span></li>";
 	    }).join('') +
 	    "</ul>";
     },

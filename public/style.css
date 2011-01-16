@@ -31,6 +31,9 @@ h1 {
     margin: 0.5em;
     margin-bottom: 2em;
 }
+#up form {
+    text-align: center;
+}
 p.hint {
     font-size: 70%;
     font-style: oblique;
@@ -41,9 +44,38 @@ p.hint {
     margin: 1em;
     padding: 0;
 }
+#down li a:before {
+    content: url(/document.png);
+    margin: 0;
+    padding: 0 2px;
+}
+#down li a.audio:before {
+    content: url(/audio.png);
+}
+#down li a.image:before {
+    content: url(/image.png);
+}
+#down li a.text:before {
+    content: url(/text.png);
+}
+#down li a.video:before {
+    content: url(/video.png);
+}
+#down li a.application:before {
+    content: url(/application.png);
+}
 a {
     color: blue;
+    text-decoration: none;
+}
+a:hover {
     text-decoration: underline;
+}
+a:active {
+    color: black;
+}
+a:visited {
+    color: #555;
 }
 .size {
     margin-left: 1em;
@@ -63,3 +95,4 @@ a {
     color: #aaa;
     font-size: 75%;
 }
+
