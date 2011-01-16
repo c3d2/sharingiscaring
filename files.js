@@ -46,17 +46,22 @@ exports.allocBytes = function(size) {
     /* purge */
     while(totalSize > MAX_TOTAL_SIZE &&
 	  files.length > 0) {
+	this.dropFile();
+    }
+};
+exports.freeBytes = function(size) {
+    totalSize -= size;
+};
 
-	var drop = files.pop();
+exports.dropFile = function() {
+    var drop;
+    if ((drop = files.pop())) {
 	exports.freeBytes(drop.size);
 
 	var path = FILES_PATH + '/' + drop.id;
 	console.log('rm old ' + path);
 	fs.unlink(path);
     }
-};
-exports.freeBytes = function(size) {
-    totalSize -= size;
 };
 
 exports.addFile = function(info) {
