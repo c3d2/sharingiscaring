@@ -2,6 +2,7 @@ var connect = require('connect');
 var formidable = require('formidable');
 var files = require('./files');
 var template = require('./template');
+var sys = require('sys');
 
 var MAX_FILE_SIZE = 100 * 1024 * 1024;
 
@@ -40,9 +41,13 @@ function app(app) {
 
 			    files.freeBytes(received);
 			    error = new Error('Exceeded maximum file size');
+			    /* TODO: send response ASAP */
 			} else {
 			    files.allocBytes(data.length);
-			    out.write(data);
+			    req.pause();
+			    out.write(data, function() {
+				req.resume();
+			    });
 			}
 		    }
 		});
@@ -87,9 +92,7 @@ function fileDownload(req, res, next) {
 	res.writeHead(200, { 'Content-Type': info.mime,
 			     'Content-Length': info.size });
 	var read = files.readFile(info.id);
-	read.on('data', function(data) {
-	    res.write(data);
-	});
+	sys.pump(read, res);
 	read.on('close', function() {
 	    res.end();
 	});
