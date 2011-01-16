@@ -2,6 +2,7 @@ var fs = require('fs');
 
 var DB_PATH = 'files.json';
 var FILES_PATH = 'files';
+var MAX_FILES = 42;
 var MAX_TOTAL_SIZE = 2048 * 1024 * 1024;
 
 /* Keys: id, name, size, type, date, downloads */
@@ -77,6 +78,8 @@ exports.addFile = function(info) {
 
 	info.size = size;
 	files.unshift(info);
+	while(files.length > MAX_FILES)
+	    that.dropFile();
 	writeInfo();
     };
     out.discard = function() {
