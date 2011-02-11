@@ -56,7 +56,7 @@ module.exports = {
 
     uploadForm: "<div id='up'>\
 	<form action='/upload' method='post' enctype='multipart/form-data'>\
-	  <input id='file' name='file' type='file'>\
+	  <input id='file' name='file' type='file' size='8'>\
 	  <input type='submit' value='Hochladen'>\
 	</form>\
 	<p class='hint'>\

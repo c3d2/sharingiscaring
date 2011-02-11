@@ -1,4 +1,4 @@
-body {
+ body {
     padding: 0;
     margin: 0;
     background-color: #ddd;
@@ -32,7 +32,8 @@ h1 {
     margin-bottom: 2em;
 }
 #up form {
-    text-align: center;
+    padding-left: 22px;
+    background: url(/up.png) no-repeat center left;
 }
 p.hint {
     font-size: 70%;
@@ -45,24 +46,9 @@ p.hint {
     padding: 0;
 }
 #down li a:before {
-    content: url(/document.png);
+    content: url(/down.png);
     margin: 0;
     padding: 0 2px;
-}
-#down li a.audio:before {
-    content: url(/audio.png);
-}
-#down li a.image:before {
-    content: url(/image.png);
-}
-#down li a.text:before {
-    content: url(/text.png);
-}
-#down li a.video:before {
-    content: url(/video.png);
-}
-#down li a.application:before {
-    content: url(/application.png);
 }
 a {
     color: blue;
