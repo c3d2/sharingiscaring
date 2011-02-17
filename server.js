@@ -62,8 +62,11 @@ function app(app) {
 		    }
 		});
 		part.on('end', function() {
-		    if (out) {
+		    if (out && received > 0) {
 			out.commit(received);
+		    } else if (out) {
+			out.discard();
+			error = new Error('File is empty');
 		    }
 		});
 	    }
