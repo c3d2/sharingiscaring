@@ -79,7 +79,7 @@ exports.addFile = function(info) {
 	info.size = size;
 	files.unshift(info);
 	while(files.length > MAX_FILES)
-	    that.dropFile();
+	    exports.dropFile();
 	writeInfo();
     };
     out.discard = function() {
