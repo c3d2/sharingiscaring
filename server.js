@@ -6,6 +6,16 @@ var sys = require('sys');
 
 var MAX_FILE_SIZE = 100 * 1024 * 1024;
 
+function enforceVhost(vhost) {
+    return function(req, res, next) {
+	if (!req.headers['host'] || req.headers['host'] === vhost)
+	    return next();
+
+	res.writeHead(302, { 'Location': 'http://' + vhost + '/' });
+	res.end();
+    };
+}
+
 function app(app) {
     var HTML_HEADERS = { 'Content-Type': 'text/html; charset=UTF-8' };
     app.get('/', function(req, res) {
@@ -100,8 +110,13 @@ function fileDownload(req, res, next) {
 	next();
 }
 
+var optionalVhostEnforce = process.env.VHOST ?
+			   enforceVhost(process.env.VHOST) :
+			   function(req, res, next) { return next; };
+
 connect.createServer(
     connect.logger(),
+    optionalVhostEnforce,
     connect.router(app),
     fileDownload,
     connect.staticProvider(__dirname + '/public'),
