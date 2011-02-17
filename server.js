@@ -115,7 +115,7 @@ function fileDownload(req, res, next) {
 
 var optionalVhostEnforce = process.env.VHOST ?
 			   enforceVhost(process.env.VHOST) :
-			   function(req, res, next) { return next; };
+			   function(req, res, next) { return next(); };
 
 connect.createServer(
     connect.logger(),
