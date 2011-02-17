@@ -73,7 +73,7 @@ function app(app) {
 	};
         form.parse(req, function(err, fields, files) { if (!error) error = err; });
 
-	req.on('end', function() {
+	form.on('end', function() {
 	    if (!out && !error)
 		error = new Error('No file received');
 
