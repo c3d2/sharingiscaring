@@ -2,8 +2,8 @@ var fs = require('fs');
 
 var DB_PATH = 'files.json';
 var FILES_PATH = 'files';
-var MAX_FILES = 42;
-var MAX_TOTAL_SIZE = 2048 * 1024 * 1024;
+var MAX_FILES = 23;
+var MAX_TOTAL_SIZE = 2 * 1024 * 1024 * 1024;
 
 /* Keys: id, name, size, type, date, downloads */
 var files;

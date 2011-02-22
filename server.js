@@ -4,7 +4,7 @@ var files = require('./files');
 var template = require('./template');
 var sys = require('sys');
 
-var MAX_FILE_SIZE = 100 * 1024 * 1024;
+var MAX_FILE_SIZE = 300 * 1024 * 1024;
 
 function enforceVhost(vhost) {
     return function(req, res, next) {
