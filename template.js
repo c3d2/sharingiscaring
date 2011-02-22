@@ -48,7 +48,7 @@ module.exports = {
 	Sharing is Caring\
       </h1>",
     htmlFoot: "<p class='foot'>\
-	Ein Dienst in der Testphase.\
+	Ein Projekt des &lt;&lt;&lt;/&gt;&gt;\
       </p>\
     </div>\
   </body>\
