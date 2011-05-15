@@ -122,6 +122,6 @@ connect.createServer(
     optionalVhostEnforce,
     connect.router(app),
     fileDownload,
-    connect.staticProvider(__dirname + '/public'),
+    connect.static(__dirname + '/public'),
     connect.errorHandler({ dumpExceptions: true, showStack: true })
 ).listen(parseInt(process.env.PORT || "8000", 10), '::');
