@@ -1,5 +1,4 @@
-
-__installion__
+__installation__
 
     npm install
 
