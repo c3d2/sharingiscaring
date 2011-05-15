@@ -1,0 +1,14 @@
+{ "name": "sharingiscaring"
+, "version": "0.0.1"
+, "author": "Astro <astro@spaceboyz.net> (http://spaceboyz.net/~astro/)"
+, "description": "1click file-sharing for anyone"
+, "homepage": "https://github.com/c3d2/sharingiscaring"
+, "repository": { "type": "git", "url": "git://github.com/c3d2/sharingiscaring.git" }
+, "main": "server.js"
+, "engines": { "node": "*" }
+, "dependencies": {
+    "formidable": ">= 0.9.11",
+    "connect": ">= 0.5.10",
+    "ndns": ">= 0.1.1"
+  }
+}
