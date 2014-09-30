@@ -110,4 +110,6 @@ app.use(function(req, res, next) {
     res.writeHead(404, { Location: '/' });
     res.end();
 });
-app.listen(parseInt(process.env.PORT || "8000", 10), '::');
+var port = parseInt(process.env.PORT || "8000", 10);
+app.listen(port, '::');
+console.log("Now listeing on http://[::1]:" + port);
