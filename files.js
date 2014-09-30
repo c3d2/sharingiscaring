@@ -5,6 +5,9 @@ var FILES_PATH = 'files';
 var MAX_FILES = 23;
 var MAX_TOTAL_SIZE = 2 * 1024 * 1024 * 1024;
 
+/* Ensure FILES_PATH exists: */
+fs.mkdir(FILES_PATH, function() { });
+
 /* Keys: id, name, size, type, date, downloads */
 var files;
 try {

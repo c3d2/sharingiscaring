@@ -38,6 +38,7 @@ h1 {
 p.hint {
     font-size: 70%;
     font-style: oblique;
+    text-align: center;
 }
 
 #down {

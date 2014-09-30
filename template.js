@@ -49,7 +49,7 @@ module.exports = {
 	Sharing is Caring\
       </h1>",
     htmlFoot: "<p class='foot'>\
-	Ein Projekt des &lt;&lt;&lt;/&gt;&gt;\
+        Kopimi\
       </p>\
     </div>\
   </body>\
@@ -61,8 +61,7 @@ module.exports = {
 	  <input type='submit' value='Hochladen'>\
 	</form>\
 	<p class='hint'>\
-	  Wie wärs mit einem schicken Foto? Dem Flyer der nächsten\
-	  Party? Oder gar einem gesprochenen Kommentar?\
+          Give something to other visitors!\
 	</p>\
       </div>",
 
