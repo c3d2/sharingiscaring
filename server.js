@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var express = require('express');
 var formidable = require('formidable');
 var files = require('./files');
@@ -113,4 +115,4 @@ app.use(function(req, res, next) {
 });
 var port = parseInt(process.env.PORT || "8000", 10);
 app.listen(port, '::');
-console.log("Now listeing on http://[::1]:" + port);
+console.log("Now listening on http://[::1]:" + port);
