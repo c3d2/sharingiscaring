@@ -5,6 +5,9 @@
 , "homepage": "https://github.com/c3d2/sharingiscaring"
 , "repository": { "type": "git", "url": "git://github.com/c3d2/sharingiscaring.git" }
 , "main": "server.js"
+, "bin": {
+    "sharingiscaring": "server.js"
+  }
 , "engines": { "node": "*" }
 , "dependencies": {
     "formidable": ">= 0.9.11",
