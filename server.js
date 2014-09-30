@@ -106,4 +106,8 @@ function fileDownload(req, res, next) {
 
 app.use(fileDownload);
 app.use(express.static(__dirname + '/public'));
+app.use(function(req, res, next) {
+    res.writeHead(404, { Location: '/' });
+    res.end();
+});
 app.listen(parseInt(process.env.PORT || "8000", 10), '::');
