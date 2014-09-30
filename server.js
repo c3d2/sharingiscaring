@@ -8,7 +8,8 @@ var MAX_FILE_SIZE = 300 * 1024 * 1024;
 var HTML_HEADERS = { 'Content-Type': 'text/html; charset=UTF-8' };
 
 var app = express();
-app.use(express.basicAuth('k-ot', 'k-ot'));
+// Don't want this public? Uncomment:
+// app.use(express.basicAuth('user', 'password'));
 
 app.get('/', function(req, res) {
     res.writeHead(200, HTML_HEADERS);
